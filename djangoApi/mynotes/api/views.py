@@ -50,7 +50,7 @@ def getNotes(request):
 
 
 @api_view(['GET'])
-def getNotes(request, pk):
+def getNote(request, pk):
     notes = Note.objects.get(id=pk)
     serializer = NoteSerializer(notes, many=False)# single object
     return Response(serializer.data)
